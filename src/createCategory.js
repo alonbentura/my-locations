@@ -26,10 +26,10 @@ const CreateCategory = (props) => {
   };
 
   return (
-    <div>
+    <div className={"container"}>
       <button
         className="button close"
-        onClick={() =>  props.setCreateNew(false)}
+        onClick={() => props.setCreateNew(false)}
       >
         X
       </button>
@@ -65,14 +65,14 @@ const CreateCategory = (props) => {
           <div className="label">Location Coordinates </div>
           <input
             className="input"
-            name="cordinates"
+            name="coordinates"
+            type="number"
             required={true}
             onChange={onChangeLocation}
           />
         </div>
       </div>
-      <button onClick={onSubmit} className={"submit"}>
-        {" "}
+      <button onClick={onSubmit} className=" button submit">
         Submit
       </button>
     </div>

@@ -17,25 +17,30 @@ const ViewCategory = (props) => {
 
   const clickSave = () => {
     const catIndex = props.categories.findIndex((cat) => cat == category);
+    const categoryName = editCategory.location.categoryName || category.name;
+    const locationName = editCategory.location.name || location.name;
+    const locationAddress = editCategory.location.address || location.address;
+    const locationCoordinates =
+      editCategory.location.coordinates || location.coordinates;
 
-    console.log("editCategory", editCategory);
     const categoryChanged = {
-      name: editCategory.location.categoryName,
+      name: categoryName,
       location: {
-        name: editCategory.location.name,
-        address: editCategory.location.address,
-        coordinates: editCategory.location.coordinates,
+        name: locationName,
+        address: locationAddress,
+        coordinates: locationCoordinates,
       },
     };
+
     const catListAfterChange = [...props.categories];
     catListAfterChange[catIndex] = categoryChanged;
     props.setCategories(catListAfterChange);
+    props.onClickActionButton("")
   };
-
   return (
     props.mode &&
     props.category && (
-      <div>
+      <div className={"container"}>
         <button
           className="button close"
           onClick={() => props.onClickActionButton("")}
@@ -68,6 +73,7 @@ const ViewCategory = (props) => {
             <input
               className="input"
               name="coordinates"
+              type="number"
               placeholder={location.coordinates}
               disabled={viewMode}
               onChange={onChange}

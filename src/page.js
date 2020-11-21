@@ -1,38 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Toolbar from "./toolbar";
 import ViewCategory from "./viewCategory";
 import CategoriesList from "./categoriesList";
 import CreateCategory from "./createCategory";
 
-const catagorismodel = [
-  {
-    name: "vaction",
-    location: {
-      name: "barcelona",
-      address: "rotchild",
-      coordinates: "515645",
-    },
-  },
-  {
-    name: "bussines",
-    location: {
-      name: "madrid",
-      address: "",
-      coordinates: "sfdsf",
-    },
-  },
-  {
-    name: "living",
-    location: {
-      name: "tel aviv",
-      address: "",
-      coordinates: "sfdsf",
-    },
-  },
-];
-
 const Page = () => {
-  const [categories, setCategories] = useState(catagorismodel);
+  const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCatgeory] = useState(false);
   const [mode, setMode] = useState("");
   const [createNew, setCreateNew] = useState(false);
