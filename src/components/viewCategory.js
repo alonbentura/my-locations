@@ -6,6 +6,8 @@ const ViewCategory = (props) => {
   const [editCategory, setEditCategory] = useState({});
   const viewMode = props.mode === "View" ? true : false;
 
+  console.log(props);
+
   const onChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
@@ -35,7 +37,7 @@ const ViewCategory = (props) => {
     const catListAfterChange = [...props.categories];
     catListAfterChange[catIndex] = categoryChanged;
     props.setCategories(catListAfterChange);
-    props.onClickActionButton("")
+    props.onClickActionButton("");
   };
   return (
     props.mode &&

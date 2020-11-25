@@ -1,13 +1,11 @@
-import Page from "./page";
+import Page from "./components/page";
 import "../src/style/styles.scss";
 
-
 function App() {
-  return (
-    <div>
-      <Page />
-    </div>
-  );
+  return
+  
+  
+  <Page />;
 }
 
 export default App;

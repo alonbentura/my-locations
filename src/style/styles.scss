@@ -54,7 +54,7 @@
     background-color: $redColor;
   }
   &.view {
-    background-color: $greenColor
+    background-color: $greenColor;
   }
   &.new {
     background-color: $lightBlueColor;
@@ -79,6 +79,16 @@
 .container {
   position: absolute;
   right: 5%;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  justify-content: space-around;
+  display: flex;
+  width: 100%;
+  padding: 10px 10px;
+  background: lightblue;
 }
 
 .inputContainer {
