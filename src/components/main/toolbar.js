@@ -1,8 +1,11 @@
 import React from "react";
 
 const Toolbar = (props) => {
-  const category = !!props.selectedCategory;
-  const title = category ? props.selectedCategory.name : "categoires";
+  const selected = !!props.selected;
+  const entityToShow =
+    props.entity === "locations" ? "Locations" : "Categoires";
+  const title = selected ? props.selected.name : entityToShow;
+  const buttonTitle = props.entity === "locations" ? "Location" : "category";
 
   const onClickNewCAtegory = () => {
     props.setCreateNew(true);
@@ -13,11 +16,11 @@ const Toolbar = (props) => {
   return (
     <div className="toolbar">
       <button className="button new" onClick={onClickNewCAtegory}>
-        New category
+        New {buttonTitle}
       </button>
       <div className="title">{title}</div>
       <div className="toolbarBtns">
-        {category && (
+        {selected && (
           <React.Fragment>
             <button
               className="button"

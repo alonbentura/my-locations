@@ -110,5 +110,11 @@
     width: 250px;
     font-size: $midFontSize;
     padding: 0 5px;
+    &.coordinates {
+      width: 118px;
+    }
+    &.select{
+      width: 264px
+    }
   }
 }

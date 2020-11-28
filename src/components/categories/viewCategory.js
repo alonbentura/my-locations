@@ -6,8 +6,6 @@ const ViewCategory = (props) => {
   const [editCategory, setEditCategory] = useState({});
   const viewMode = props.mode === "View" ? true : false;
 
-  console.log(props);
-
   const onChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
@@ -31,6 +29,7 @@ const ViewCategory = (props) => {
         name: locationName,
         address: locationAddress,
         coordinates: locationCoordinates,
+        categoryName,
       },
     };
 
