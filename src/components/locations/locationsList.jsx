@@ -12,22 +12,26 @@ const LocationsList = (props) => {
 
   return (
     <div>
-      <label>Sort Location </label>
-      <select
-        placeholder={"Sort List"}
-        onClick={(e) => sortList(e, props.locations, props.setLocations)}
-      >
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
-      </select>
+      <div style={{ margin: "5px 15px", display: "flex" }}>
+        <div>
+          <label>Sort Location </label>
+          <select
+            placeholder={"Sort List"}
+            onClick={(e) => sortList(e, props.locations, props.setLocations)}
+          >
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
+          </select>
+        </div>
 
-      <label>Filter By Categories</label>
-      <select placeholder={"Sort List"} onClick={(e) => filterList(e)}>
-        <option value="all">All</option>
-        {props.categories.map((category) => {
-          return <option value={`${category.name}`}>{category.name}</option>;
-        })}
-      </select>
+        <label>Filter By Categories</label>
+        <select placeholder={"Sort List"} onClick={(e) => filterList(e)}>
+          <option value="all">All</option>
+          {props.categories.map((category) => {
+            return <option value={`${category.name}`}>{category.name}</option>;
+          })}
+        </select>
+      </div>
 
       <div className="listContainer">
         <ul>
